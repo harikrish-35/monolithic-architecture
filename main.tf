@@ -1,7 +1,7 @@
 resource "aws_launch_configuration" "web_server_as" {
-    image_id           = "ami-0830c9faf0efc29ff"
+    image_id           = "ami-033a1ebf088e56e81"
     instance_type = "t2.micro"
-    key_name = "manish"
+    key_name = "allport"
 }
    
 
@@ -9,7 +9,7 @@ resource "aws_launch_configuration" "web_server_as" {
   resource "aws_elb" "web_server_lb"{
      name = "web-server-lb"
      security_groups = [aws_security_group.web_server.id]
-     subnets = ["subnet-09f13356f04fffb8b", "subnet-0f8c7425356725a9f"]
+     subnets = ["subnet-07b0c32a943f5d6a9", "subnet-035b1064d45781d61"]
      listener {
       instance_port     = 8000
       instance_protocol = "http"
